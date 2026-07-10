@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1261a0">
+  <title>Online Classroom Observation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <img class="logo" src="meghe-logo.png" alt="Meghe Group logo">
+        <div>
+          <h1>Online Classroom Observation</h1>
+          <p>Meghe Group of Schools</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="signinPanel" class="panel signin-panel">
+        <h2>Sign in to continue</h2>
+        <p>Use your official mgsnagpur.org Google account.</p>
+        <div id="googleSignInButton"></div>
+        <div id="signinStatus"></div>
+      </section>
+
+      <section id="appPanel" class="hidden">
+        <div class="panel">
+          <div class="toolbar">
+            <div>
+              <label for="schoolSelect">Select school</label>
+              <select id="schoolSelect"></select>
+            </div>
+            <button id="refreshButton" class="secondary-button">Refresh Today</button>
+          </div>
+          <p id="dateLine" class="date-line"></p>
+          <p id="userLine" class="user-line"></p>
+          <a id="timetableButton" class="link-button full" href="#" target="_blank" rel="noopener">View Class Timetable Folder</a>
+        </div>
+
+        <div id="activeBanner" class="active-banner hidden"></div>
+        <div id="pageStatus"></div>
+        <div id="cameraGrid" class="camera-grid"></div>
+
+        <section class="panel">
+          <h2>Your Recent Observations</h2>
+          <div id="historyList" class="history-list"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div id="observationModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>Complete Observation</h2>
+      <p id="modalClass"></p>
+      <label for="remarks">Remarks <span class="optional-text">(optional)</span></label>
+      <textarea id="remarks" rows="7" placeholder="Enter remarks, if required..."></textarea>
+      <div id="modalStatus"></div>
+      <div class="modal-actions">
+        <button id="submitObservation" class="primary-button">Submit Observation</button>
+        <button id="closeModal" class="secondary-button">Return to Observation</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
